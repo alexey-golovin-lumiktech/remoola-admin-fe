@@ -37,7 +37,7 @@ export default function LoginPage(){
     }
 
     // 3) Hard navigate so the next request includes cookies for sure
-    window.location.assign(next);
+    router.push(next);
   }
 
   return (

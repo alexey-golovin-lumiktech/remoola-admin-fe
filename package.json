@@ -1,5 +1,5 @@
 {
-  "name": "remoola-admin-fe-github",
+  "name": "@remoola/admin",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "openapi": "npm run openapi:pull && npm run openapi:gen"
   },
   "dependencies": {
+    "@remoola/openapi": "^0.1.0",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",

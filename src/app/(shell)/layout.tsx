@@ -5,7 +5,7 @@ import Sidebar from "./sidebar";
 export default async function ShellLayout({ children }: { children: React.ReactNode }) {
   const me = await getMeSSR();
   const role = me?.role;
-  if (!role || (role !== "admin" && role !== "superadmin")) redirect("/login?next=/");
+  if (!role || (role !== "admin" && role !== ("superadmin" as const))) redirect("/login?next=/");
 
   return (
     <div className="mx-auto grid grid-cols-12 gap-6 px-3 py-6 sm:px-6 lg:px-8">
