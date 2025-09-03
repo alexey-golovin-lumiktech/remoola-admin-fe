@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Card, DataTable, Badge } from "@/components/ui";
+import { Card, DataTable, Badge } from '@remoola/ui';
 import { getJson, patchJson, delJson } from "@/lib/api";
 
 type Contract = { id:string; rateCents:number; rateUnit:"hour"|"fixed"; status:string; client?:{email:string}; contractor?:{name:string} };

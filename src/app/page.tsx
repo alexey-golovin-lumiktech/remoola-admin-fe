@@ -1,5 +1,5 @@
 import Shell from "./(shell)/layout";
-import { Card, Badge, Progress } from "@/components/ui";
+import { Card, Badge, Progress } from '@remoola/ui';
 
 export default async function AdminDashboard() {
   return (
