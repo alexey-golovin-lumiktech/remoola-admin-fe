@@ -1,4 +1,3 @@
-// admin-web/src/lib/server-auth.ts
 import { cookies as nextCookies } from "next/headers";
 
 export async function getMeSSR() {
