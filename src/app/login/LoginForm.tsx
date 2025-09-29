@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 export default function LoginForm({ nextPath }: { nextPath: string }) {
-  const [email, setEmail] = useState("admin@example.com");
-  const [password, setPassword] = useState("password");
+  const [email, setEmail] = useState(`admin@example.com`);
+  const [password, setPassword] = useState(`password`);
   const [err, setErr] = useState<string>();
 
   async function submit(e: React.FormEvent) {
@@ -13,9 +13,9 @@ export default function LoginForm({ nextPath }: { nextPath: string }) {
 
     const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
     const r = await fetch(`${base}/auth/login`, {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
+      method: `POST`,
+      credentials: `include`,
+      headers: { "Content-Type": `application/json` },
       body: JSON.stringify({ email, password }),
     });
     if (!r.ok) {
@@ -23,13 +23,13 @@ export default function LoginForm({ nextPath }: { nextPath: string }) {
       return;
     }
 
-    const me = await fetch(`${base}/auth/me`, { credentials: "include", cache: "no-store" });
+    const me = await fetch(`${base}/auth/me`, { credentials: `include`, cache: `no-store` });
     if (!me.ok) {
-      setErr("Logged in, but cookies not available. Check CORS/cookie attrs.");
+      setErr(`Logged in, but cookies not available. Check CORS/cookie attrs.`);
       return;
     }
 
-    window.location.assign(nextPath || "/");
+    window.location.assign(nextPath || `/`);
   }
 
   return (

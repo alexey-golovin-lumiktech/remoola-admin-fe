@@ -7,17 +7,17 @@ export async function getMeSSR() {
   const cookieHeader = cookieStore
     .getAll()
     .map(({ name, value }) => `${name}=${encodeURIComponent(value)}`)
-    .join("; ");
+    .join(`; `);
 
   const res = await fetch(`${base}/auth/me`, {
     headers: { cookie: cookieHeader },
-    cache: "no-store",
+    cache: `no-store`,
   });
 
   if (!res.ok) return null;
   return (await res.json()) as {
     id: string;
     email: string;
-    role: "client" | "admin" | "superadmin";
+    role: `client` | `admin` | `superadmin`;
   };
 }

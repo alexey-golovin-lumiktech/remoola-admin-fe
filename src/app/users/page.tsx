@@ -1,18 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Card, DataTable } from '@remoola/ui';
-import { getJson, patchJson } from "@/lib/api";
+import { getJson, patchJson } from "../../lib/api";
 
-type User = { id: string; email: string; name: string; role: "client"|"admin"|"superadmin" };
+type User = { id: string; email: string; name: string; role: `client`|`admin`|`superadmin` };
 
 export default function UsersPage() {
   const [rows, setRows] = useState<User[]>([]);
-  const [q, setQ] = useState("");
+  const [q, setQ] = useState(``);
   async function load() {
-    const data = await getJson<User[]>(`/admin/users${q ? `?q=${encodeURIComponent(q)}` : ""}`);
+    const data = await getJson<User[]>(`/admin/users${q ? `?q=${encodeURIComponent(q)}` : ``}`);
     setRows(data);
   }
-  useEffect(() => { load(); }, [q]);
+  useEffect(() => { load(); }, [q]);// eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -25,9 +25,9 @@ export default function UsersPage() {
             rows={rows}
             rowKey={(r)=>r.id}
             columns={[
-              { key: "email", header: "Email" },
-              { key: "name",  header: "Name" },
-              { key: "role",  header: "Role", render: (u) => (
+              { key: `email`, header: `Email` },
+              { key: `name`,  header: `Name` },
+              { key: `role`,  header: `Role`, render: (u) => (
                 <select className="rounded border px-2 py-1 text-sm" value={u.role}
                         onChange={(e)=>patchJson(`/admin/users/${u.id}/role`, { role: e.target.value }).then(load)}>
                   <option value="client">client</option>

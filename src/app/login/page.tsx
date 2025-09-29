@@ -10,7 +10,7 @@ export default async function LoginPage({
 }) {
   const sp = await searchParams; // ✅ await before use
   const raw = Array.isArray(sp.next) ? sp.next[0] : sp.next;
-  const next = typeof raw === "string" && raw.length > 0 ? decodeURIComponent(raw) : "/dashboard";
+  const next = typeof raw === `string` && raw.length > 0 ? decodeURIComponent(raw) : `/dashboard`;
 
   return <LoginForm nextPath={next} />;
 }

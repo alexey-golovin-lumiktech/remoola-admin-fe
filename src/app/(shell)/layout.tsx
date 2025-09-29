@@ -1,11 +1,11 @@
 import { redirect } from "next/navigation";
-import { getMeSSR } from "@/lib/server-auth";
 import Sidebar from "./sidebar";
+import { getMeSSR } from "../../lib/server-auth";
 
 export default async function ShellLayout({ children }: { children: React.ReactNode }) {
   const me = await getMeSSR();
   const role = me?.role;
-  if (!role || (role !== "admin" && role !== ("superadmin" as const))) redirect("/login?next=/");
+  if (!role || (role !== `admin` && role !== (`superadmin` as const))) redirect(`/login?next=/`);
 
   return (
     <div className="mx-auto grid grid-cols-12 gap-6 px-3 py-6 sm:px-6 lg:px-8">
@@ -19,7 +19,7 @@ export default async function ShellLayout({ children }: { children: React.ReactN
             <input className="input" placeholder="Search users, contracts, payments..." />
             <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">⌘K</span>
           </div>
-          <a href="/login" className="grid h-10 w-10 place-items-center round-lg bg-white shadow-sm" style={{ border: '1px solid rgba(0,0,0,.06)' }}>⎋</a>
+          <a href="/login" className="grid h-10 w-10 place-items-center round-lg bg-white shadow-sm" style={{ border: `1px solid rgba(0,0,0,.06)` }}>⎋</a>
         </div>
 
         {children}
