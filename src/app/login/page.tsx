@@ -1,4 +1,4 @@
-import LoginForm from "./LoginForm";
+import LoginForm from './LoginForm';
 
 type SP = Record<string, string | string[] | undefined>;
 

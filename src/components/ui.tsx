@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import Link from "next/link";
-import React from "react";
-import { cn } from "../lib/utils";
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import Link from 'next/link';
+import React from 'react';
+import { cn } from '../lib/utils';
 
 /* ---------- Card ---------- */
 export function Card({ title, actions, children, className }:{

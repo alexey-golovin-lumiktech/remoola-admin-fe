@@ -1,5 +1,5 @@
-import "@remoola/ui/src/styles.css";  
-import "./globals.css";
+import '@remoola/ui/src/styles.css';  
+import './globals.css';
 
 export const metadata = { title: `Remoola Admin`, description: `Admin CMS` };
 

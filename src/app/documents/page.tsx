@@ -1,7 +1,7 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Card, DataTable } from '@remoola/ui';
-import { getJson, delJson } from "../../lib/api";
+import { useEffect, useState } from 'react';
+import { getJson, delJson } from '../../lib/api';
+import { Card, DataTable } from '../../components/ui';
 
 type Doc = { id:string; name:string; type:string; sizeBytes?:number; updatedAt?:string; fileUrl?:string };
 

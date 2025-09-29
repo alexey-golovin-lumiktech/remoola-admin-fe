@@ -1,5 +1,5 @@
 import { Card, Badge, Progress } from '../components/ui';
-import Shell from "./(shell)/layout";
+import Shell from './(shell)/layout';
 
 export default async function AdminDashboard() {
   return (

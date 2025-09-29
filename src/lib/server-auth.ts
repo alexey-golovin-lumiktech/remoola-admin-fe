@@ -1,4 +1,4 @@
-import { cookies as nextCookies } from "next/headers";
+import { cookies as nextCookies } from 'next/headers';
 
 export async function getMeSSR() {
   const base = process.env.NEXT_PUBLIC_API_BASE_URL!;
